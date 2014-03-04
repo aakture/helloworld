@@ -1,4 +1,3 @@
-
 package com.mayapp.app;
 
 import org.eclipse.jetty.server.Server;
@@ -8,26 +7,24 @@ import org.glassfish.jersey.server.ServerProperties;
 import org.glassfish.jersey.servlet.ServletContainer;
 
 /**
- * Hello world!
+ * Hello world! URL  http://localhost:8112/hello
+ *
  */
 public class App {
     public static void main(String[] args) {
-            Server server = new Server(8112);
-            ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-            context.setContextPath("/");
-            server.setHandler(context);
-            ServletHolder h = new ServletHolder(new ServletContainer());
-            h.setInitParameter(ServerProperties.PROVIDER_PACKAGES, "com.myapp.resources");
-            h.setInitOrder(1);
-            context.addServlet(h, "/*");
+        Server server = new Server(8112);
+        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        context.setContextPath("/");
+        server.setHandler(context);
+        ServletHolder h = new ServletHolder(new ServletContainer());
+        h.setInitParameter(ServerProperties.PROVIDER_PACKAGES, "com.myapp.resources");
+        h.setInitOrder(1);
+        context.addServlet(h, "/*");
         server.setDumpAfterStart(true);
-            try
-            {
-                server.start();
+        try  {
             server.start();
         }catch(Exception ex) {
            ex.printStackTrace();
         }
     }
-
 }
