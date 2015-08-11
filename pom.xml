@@ -19,6 +19,17 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
             <version>${dep.jetty}</version>
@@ -67,7 +78,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.myapp.App</mainClass>
+                                    <mainClass>com.mayapp.app.App</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
